@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.kofeychi.Modularity.Mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ScreenShakeModule.CameraMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

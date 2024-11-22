@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "modularity",
+	"version": "${version}",
+	"name": "Modularity",
+	"description": "Main mod of the Modularity mod.",
+	"accessWidener": "modularity.accesswidener",
+	"authors": [
+		"@kofeychi"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.kofeychi.Modularity.base.Modularity"
+		],
+		"fabric-datagen": [
+			"net.kofeychi.Modularity.base.ModularityDataGenerator"
+		],
+		"client": [
+			"net.kofeychi.Modularity.base.ModularityClient",
+			"net.kofeychi.Modularity.ScreenShake.ScreenShakeModule"
+		]
+	},
+	"mixins": [
+		"modularity.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
