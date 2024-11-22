@@ -1,7 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.8-SNAPSHOT'
 	id 'maven-publish'
-	id "com.modrinth.minotaur" version "2.+"
+	//id "com.modrinth.minotaur" version "2.+"
 }
 
 version = project.mod_version
@@ -21,7 +21,7 @@ repositories {
 	// for more information about repositories.
 }
 
-modrinth {
+/*modrinth {
 	token = System.getenv("MODRINTH_TOKEN") // Remember to have the MODRINTH_TOKEN environment variable set or else this will fail - just make sure it stays private!
 	projectId = "modularity" // This can be the project ID or the slug. Either will work!
 	versionNumber = ${mod_version} // You don't need to set this manually. Will fail if Modrinth has this version already
@@ -36,6 +36,7 @@ modrinth {
 		required.project "fabric-api" // Creates a new required dependency on Fabric API
 	}
 }
+ */
 
 fabricApi {
 	configureDataGeneration()
