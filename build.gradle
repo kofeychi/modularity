@@ -1,7 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.8-SNAPSHOT'
 	id 'maven-publish'
-	//id "com.modrinth.minotaur" version "2.+"
+	id "com.modrinth.minotaur" version "2.+"
 }
 
 version = project.mod_version
@@ -12,6 +12,7 @@ base {
 }
 
 repositories {
+	maven { url "api.modrinth.com/maven" }
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url "https://maven.terraformersmc.com/releases/" }
 	// Add repositories to retrieve artifacts from in here.
@@ -21,10 +22,10 @@ repositories {
 	// for more information about repositories.
 }
 
-/*modrinth {
+modrinth {
 	token = System.getenv("MODRINTH_TOKEN") // Remember to have the MODRINTH_TOKEN environment variable set or else this will fail - just make sure it stays private!
 	projectId = "modularity" // This can be the project ID or the slug. Either will work!
-	versionNumber = ${mod_version} // You don't need to set this manually. Will fail if Modrinth has this version already
+	versionNumber = "1.0.0-ALPHA-1.21" // You don't need to set this manually. Will fail if Modrinth has this version already
 	versionType = "alpha" // This is the default -- can also be `beta` or `alpha`
 	uploadFile = remapJar // With Loom, this MUST be set to `remapJar` instead of `jar`!
 	gameVersions = ["1.21"] // Must be an array, even with only one version
@@ -36,7 +37,6 @@ repositories {
 		required.project "fabric-api" // Creates a new required dependency on Fabric API
 	}
 }
- */
 
 fabricApi {
 	configureDataGeneration()

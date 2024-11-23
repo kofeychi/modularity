@@ -1,5 +1,26 @@
 package net.kofeychi.Modularity.ScreenShake;
-
+/*
+ * ModularityAPI
+ * Copyright (c) 2024. Kofeychi
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -14,7 +35,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ScreenShakeModule implements ClientModInitializer {
     // MODULARITY ADDON LOADER MAIN INFO
@@ -59,7 +79,7 @@ public class ScreenShakeModule implements ClientModInitializer {
                         ).setIs(
                                 Integer.parseInt(data[8]),
                                 Integer.parseInt(data[9])
-                        )
+                        ).setPerlinSpeed(Float.parseFloat(data[10]))
                 );
                 if (Modularity.isDevelopment) {
                     ArrayList<String> msg = new ArrayList<>();
@@ -74,6 +94,7 @@ public class ScreenShakeModule implements ClientModInitializer {
                     msg.add(data[7]);
                     msg.add(data[8]);
                     msg.add(data[9]);
+                    msg.add(data[10]);
                     ModularityNetwork.LogSMTH(msg, LogTypes.INFO);
                 }
             });
@@ -111,7 +132,7 @@ public class ScreenShakeModule implements ClientModInitializer {
                         ).setIs(
                                 Integer.parseInt(data[14]),
                                 Integer.parseInt(data[15])
-                        )
+                        ).setPerlinSpeed(Float.parseFloat(data[16]))
                 );
                 if (Modularity.isDevelopment) {
                     ArrayList<String> msg = new ArrayList<>();
@@ -132,6 +153,7 @@ public class ScreenShakeModule implements ClientModInitializer {
                     msg.add(data[13]);
                     msg.add(data[14]);
                     msg.add(data[15]);
+                    msg.add(data[16]);
                     ModularityNetwork.LogSMTH(msg, LogTypes.INFO);
                 }
             });

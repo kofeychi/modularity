@@ -2,11 +2,9 @@ package net.kofeychi.Modularity.ScreenShake;
 
 import net.minecraft.client.render.Camera;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import static org.joml.SimplexNoise.noise;
 
@@ -20,13 +18,14 @@ public class ScreenshakeHandler {
     public static float x,y;
     public static void cameraTick(Camera camera, Random random) {
         if (intensity > 0) {
-            if (x<5) {
-                x=x+0.2f;}
-            if (x>=5) {
-                y=y+0.2f;
-                x= -5f;}
-            if (y>=5) {
-                y=-5f;}
+            double perlinS = INSTANCES.stream().mapToDouble(ScreenshakeInstance::getPerlinSpeed).sum()/10;
+            if (x<50) {
+                x= (float) (x+perlinS);}
+            if (x>=50) {
+                y= (float) (y+perlinS);
+                x= -50f;}
+            if (y>=50) {
+                y=-50f;}
             int perlin = INSTANCES.stream().mapToInt(ScreenshakeInstance::getPerlin).max().orElse(0);
             int IsRotation = INSTANCES.stream().mapToInt(ScreenshakeInstance::getIsRotation).max().orElse(1);
             int IsPosition = INSTANCES.stream().mapToInt(ScreenshakeInstance::getIsPosition).max().orElse(0);

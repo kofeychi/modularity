@@ -13,6 +13,7 @@ public class ScreenshakeInstance {
     public int duration,baseDuration;
     public int isRotation = 1;
     public int isPosition = 0;
+    public float perlinSpeed;
     public float intensity1, intensity2, intensity3,Baseintensity1, Baseintensity2, Baseintensity3;
     public static Easing intensityCurveStartEasing = Easing.LINEAR, intensityCurveEndEasing = Easing.LINEAR;
     public static int mode;
@@ -35,16 +36,25 @@ public class ScreenshakeInstance {
         this.intensity3 = i3;
         return this;
     }
+
+    public float getPerlinSpeed() {return perlinSpeed;}
+    public ScreenshakeInstance setPerlinSpeed(float a) {perlinSpeed = a;return this;}
+
     public int getIsRotation(){return isRotation;}
     public int getIsPosition() {return isPosition;}
+
     public ScreenshakeInstance setIs(int a,int b) {isRotation = a;isPosition = b;return this;}
     public ScreenshakeInstance setIsRotation(int m) {isRotation = m;return this;}
     public ScreenshakeInstance setIsPosition(int m) {isPosition = m;return this;}
+
     public ScreenshakeInstance setDur(int m) {duration = m;return this;}
     public int getDur() {return duration;}
+
     public ScreenshakeInstance setMode(int m) {mode = m;return this;}
     public int getMode(){return mode;}
+
     public int getPerlin() {return this.perlin;}
+
     public float getIntensity1() {return this.intensity1;}
     public float getIntensity2() {return this.intensity2;}
     public float getIntensity3() {return this.intensity3;}
@@ -57,6 +67,7 @@ public class ScreenshakeInstance {
         intensity3 = (float) v.z;
         return this;
     }
+
     public ScreenshakeInstance setBaseDur(int m) {baseDuration = m;return this;}
     public ScreenshakeInstance setBaseInt1(float i) {Baseintensity1 = i;return this;}
     public ScreenshakeInstance setBaseInt2(float i) {Baseintensity1 = i;return this;}
@@ -68,6 +79,7 @@ public class ScreenshakeInstance {
         baseDuration = basedur;
         return this;
     }
+
     public float getBaseIntensity1() {return this.Baseintensity1;}
     public float getBaseIntensity2() {return this.Baseintensity2;}
     public float getBaseIntensity3() {return this.Baseintensity3;}

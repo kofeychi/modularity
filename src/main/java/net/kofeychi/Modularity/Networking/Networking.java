@@ -8,6 +8,28 @@ import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
 
+/*
+ * ModularityAPI
+ * Copyright (c) 2024. Kofeychi
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 public class Networking {
     // MODULARITY ADDON LOADER MAIN INFO
     public static String ID = "ModularityNetworking";
@@ -15,19 +37,17 @@ public class Networking {
     public static String MainMethod = "Setup";
     public static void Setup(Boolean n){}
     // MODULARITY ADDON LOADER MAIN INFO
-    /*public record bytearraypayload(byte[] data,byte[] sequence,String TargetClassAcceptor) implements CustomPayload {
-        public static final CustomPayload.Id<ShakePacket.ShakePayload> ID = new CustomPayload.Id<>(SHAKE_PACKET_ID);
+    public record bytearraypayload(byte[] data,byte[] sequence) implements CustomPayload {
+        public static final CustomPayload.Id<bytearraypayload> ID = new CustomPayload.Id<>(BYTEARRAYPAYLOAD);
         public static final PacketCodec<RegistryByteBuf, bytearraypayload> CODEC = PacketCodec.tuple(
                 PacketCodecs.BYTE_ARRAY, bytearraypayload::data,
                 PacketCodecs.BYTE_ARRAY, bytearraypayload::sequence,
-                PacketCodecs.STRING, bytearraypayload::TargetClassAcceptor,
                 bytearraypayload::new);
         @Override
         public CustomPayload.Id<? extends CustomPayload> getId() {
             return ID;
         }
     }
-    public static Identifier SHAKE_PACKET_ID = IU.of("bytearrayunpackable");
-     */
+    public static Identifier BYTEARRAYPAYLOAD = IU.of("bytearrayunpackable");
 }
 

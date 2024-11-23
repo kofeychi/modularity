@@ -1,24 +1,41 @@
 package net.kofeychi.Modularity.base;
-
-import com.mojang.brigadier.arguments.BoolArgumentType;
-import com.mojang.brigadier.arguments.FloatArgumentType;
-import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.arguments.StringArgumentType;
+/*
+ * ModularityAPI
+ * Copyright (c) 2024. Kofeychi
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+import com.mojang.brigadier.arguments.*;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.fabricmc.loader.api.FabricLoader;
 import net.kofeychi.Modularity.API.BaseAPI;
 import net.kofeychi.Modularity.Networking.Networking;
 import net.kofeychi.Modularity.Registry.Registry;
 import net.kofeychi.Modularity.Registry.ShakePacket;
 import net.kofeychi.Modularity.ScreenShake.ScreenShakeModule;
 import net.kofeychi.Modularity.Util.Utils;
-import net.kofeychi.Modularity.base.AddonTools.Addon;
-import net.kofeychi.Modularity.base.AddonTools.Loader;
+import net.kofeychi.Modularity.Loader.Addon;
+import net.kofeychi.Modularity.Loader.Loader;
 import net.kofeychi.Modularity.logger.ModularityLogger;
 import net.minecraft.command.argument.Vec3ArgumentType;
 import net.minecraft.server.MinecraftServer;
@@ -37,7 +54,7 @@ public class Modularity implements ModInitializer {
 	// MODULARITY ADDON LOADER MAIN INFO
 
 	// MODULARITY CONSTANTS
-	public static boolean isDevelopment = FabricLoader.getInstance().isDevelopmentEnvironment();
+	public static boolean isDevelopment = true;//FabricLoader.getInstance().isDevelopmentEnvironment();
 
 	public static MinecraftServer Server;
 	// This logger is used to write text to the console and the log file.
@@ -80,7 +97,8 @@ public class Modularity implements ModInitializer {
 																								.then(CommandManager.argument("mode", IntegerArgumentType.integer(0, 1))
 																										.then(CommandManager.argument("isRot", BoolArgumentType.bool())
 																												.then(CommandManager.argument("isPos", BoolArgumentType.bool())
-																												.executes(Modularity::CMD))))))))))))
+																														.then(CommandManager.argument("ps", DoubleArgumentType.doubleArg())
+																												.executes(Modularity::CMD)))))))))))))
 								.then(CommandManager.literal("positional").requires(source -> source.hasPermissionLevel(1))
 										.then(CommandManager.argument("Duration", IntegerArgumentType.integer())
 												.then(CommandManager.argument("POS", Vec3ArgumentType.vec3())
@@ -96,7 +114,8 @@ public class Modularity implements ModInitializer {
 																																.then(CommandManager.argument("mode", IntegerArgumentType.integer(0, 1))
 																																		.then(CommandManager.argument("isRot", BoolArgumentType.bool())
 																																				.then(CommandManager.argument("isPos", BoolArgumentType.bool())
-																																				.executes(Modularity::POSCMD))))))))))))))))
+																																						.then(CommandManager.argument("ps", DoubleArgumentType.doubleArg())
+																																				.executes(Modularity::POSCMD)))))))))))))))))
 						));
 			});
 		}
@@ -116,7 +135,8 @@ public class Modularity implements ModInitializer {
 		int mode = IntegerArgumentType.getInteger(context,"mode");
 		boolean isrot = BoolArgumentType.getBool(context,"isRot");
 		boolean ispos = BoolArgumentType.getBool(context,"isPos");
-		BaseAPI.ScreenShakeAPI.SendPosToAllPlayers(dur,pos,falloffDistance,maxDistance,e,i1,i2,i3,e1,e2,p,mode,isrot,ispos);
+		float ps = (float) DoubleArgumentType.getDouble(context,"ps");
+		BaseAPI.ScreenShakeAPI.SendPosToAllPlayers(dur,pos,falloffDistance,maxDistance,e,i1,i2,i3,e1,e2,p,mode,isrot,ispos,ps);
 		return 1;
 	}
 	public static int CMD(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
@@ -130,7 +150,8 @@ public class Modularity implements ModInitializer {
 		int mode = IntegerArgumentType.getInteger(context,"mode");
 		boolean isrot = BoolArgumentType.getBool(context,"isRot");
 		boolean ispos = BoolArgumentType.getBool(context,"isPos");
-		BaseAPI.ScreenShakeAPI.SendNormalToAllPlayers(dur,i1,i2,i3,e1,e2,p,mode,isrot,ispos);
+		float ps = (float) DoubleArgumentType.getDouble(context,"ps");
+		BaseAPI.ScreenShakeAPI.SendNormalToAllPlayers(dur,i1,i2,i3,e1,e2,p,mode,isrot,ispos,ps);
 		return 1;
 	}
 }

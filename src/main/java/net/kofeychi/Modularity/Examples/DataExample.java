@@ -1,4 +1,4 @@
-package net.kofeychi.Modularity.base;
+package net.kofeychi.Modularity.Examples;
 /*
  * ModularityAPI
  * Copyright (c) 2024. Kofeychi
@@ -21,12 +21,12 @@ package net.kofeychi.Modularity.base;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
-public class ModularityDataGenerator implements DataGeneratorEntrypoint {
-	@Override
-	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-	}
+import net.kofeychi.Modularity.API.BaseAPI;
+import net.kofeychi.Modularity.Util.Easing;
+
+public class DataExample {
+    public static void SendNormalToAllPlayers() {
+        BaseAPI.ScreenShakeAPI.SendNormalToAllPlayers(100, 0, 10/10, 0, Easing.QUAD_IN.name, Easing.QUAD_IN.name, true, 0, true, false, 1/10);
+    }
 }

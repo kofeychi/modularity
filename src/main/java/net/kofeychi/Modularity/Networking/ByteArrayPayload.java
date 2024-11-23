@@ -1,4 +1,4 @@
-package net.kofeychi.Modularity.base;
+package net.kofeychi.Modularity.Networking;
 /*
  * ModularityAPI
  * Copyright (c) 2024. Kofeychi
@@ -21,12 +21,27 @@ package net.kofeychi.Modularity.base;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
-public class ModularityDataGenerator implements DataGeneratorEntrypoint {
-	@Override
-	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-	}
+import org.apache.commons.lang3.SerializationUtils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class ByteArrayPayload {
+    public Object[] Output;
+    public ArrayList<byte[]> Payload;
+    public ArrayList<byte[]> Sequence;
+    public ByteArrayPayload(Object... Input){
+        ArrayList<Class> seq=new ArrayList<>();
+        ArrayList<Object> pay=new ArrayList<>();
+        int i = 0;
+        for(Iterator var2 = Arrays.stream(Input).iterator(); var2.hasNext(); ++i) {
+            Object obj = var2.next();
+            seq.add(obj.getClass());
+            pay.add(obj);
+            Payload.add(SerializationUtils.serialize(pay));
+            Sequence.add(SerializationUtils.serialize(seq));
+        }
+    }
 }
