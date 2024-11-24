@@ -24,6 +24,7 @@ package net.kofeychi.Modularity.API;
 
 import net.kofeychi.Modularity.Examples.DataExample;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
@@ -35,7 +36,11 @@ import java.util.List;
  * @version 1.0 BETA
  * @since 1.0-BETA-1.21
  */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public abstract class API {
+    @SuppressWarnings("All")
+    @MethodsReturnNonnullByDefault
     public abstract static class ScreenShakeAPI {
     /**
      * Sends the ScreenShake packet to the all clients on the server,then applies it after creating the Screenshake effect.

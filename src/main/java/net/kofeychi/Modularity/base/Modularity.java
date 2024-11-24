@@ -41,8 +41,10 @@ import net.minecraft.command.argument.Vec3ArgumentType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import net.minecraft.util.math.Vec3d;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class Modularity implements ModInitializer {
 	public static final String MODID = "modularity";
 

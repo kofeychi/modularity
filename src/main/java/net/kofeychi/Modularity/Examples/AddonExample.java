@@ -27,6 +27,7 @@ import net.kofeychi.Modularity.Loader.Addon;
 import net.kofeychi.Modularity.Loader.Loader;
 import net.kofeychi.Modularity.logger.LogTypes;
 import net.kofeychi.Modularity.logger.ModularityLogger;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,8 @@ import java.util.ArrayList;
  * <p>
  * Addon base should impliment {@link ModInitializer Fabric mod initialiser} and be in the fabric.mod.json entrypoint!
  */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class AddonExample implements ModInitializer {
     // MODULARITY ADDON LOADER MAIN INFO
     /**

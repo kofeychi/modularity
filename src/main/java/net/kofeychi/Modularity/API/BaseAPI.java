@@ -27,11 +27,13 @@ import net.kofeychi.Modularity.DataUtil.CODECS;
 import net.kofeychi.Modularity.Registry.ShakePacket;
 import net.kofeychi.Modularity.base.Modularity;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import java.util.List;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class BaseAPI{
     // MODULARITY ADDON LOADER MAIN INFO
     public static String ID = "ModularityAPI";

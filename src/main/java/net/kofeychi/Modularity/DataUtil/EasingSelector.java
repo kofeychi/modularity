@@ -22,10 +22,12 @@ package net.kofeychi.Modularity.DataUtil;
  * SOFTWARE.
  */
 import net.kofeychi.Modularity.Util.Easing;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class EasingSelector {
     public static Easing EasingSelectorGet(String arg) {
         return RequireNonNullUtils.RequireNonNullOrDef(EasingSelector.EasingValues().get(arg),Easing.LINEAR);

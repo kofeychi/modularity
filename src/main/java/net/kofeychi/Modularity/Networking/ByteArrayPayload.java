@@ -22,12 +22,14 @@ package net.kofeychi.Modularity.Networking;
  * SOFTWARE.
  */
 
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import org.apache.commons.lang3.SerializationUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class ByteArrayPayload {
     public Object[] Output;
     public ArrayList<byte[]> Payload;

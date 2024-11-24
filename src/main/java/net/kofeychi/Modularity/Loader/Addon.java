@@ -24,10 +24,12 @@ package net.kofeychi.Modularity.Loader;
 
 import net.kofeychi.Modularity.logger.LogTypes;
 import net.kofeychi.Modularity.logger.ModularityLogger;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-@SuppressWarnings("Unsafe")
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class Addon {
     public Class Target;
     public String ID;

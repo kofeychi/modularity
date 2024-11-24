@@ -1,4 +1,7 @@
 package net.kofeychi.Modularity.Event;
+
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
+
 /*
  * ModularityAPI
  * Copyright (c) 2024. Kofeychi
@@ -21,6 +24,8 @@ package net.kofeychi.Modularity.Event;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class EventModule {
     // MODULARITY ADDON LOADER MAIN INFO
     public static String ID = "ModularityEvents";

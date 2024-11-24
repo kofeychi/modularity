@@ -9,4 +9,8 @@
  * @author Kofeychi
  * @version 1.0 BETA
  */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 package net.kofeychi.Modularity;
+
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;

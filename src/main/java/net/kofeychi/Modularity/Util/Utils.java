@@ -21,6 +21,14 @@ package net.kofeychi.Modularity.Util;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
+
+/**
+ * Utils package
+ */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class Utils {
     // MODULARITY ADDON LOADER MAIN INFO
     public static String ID = "ModularityUtils";

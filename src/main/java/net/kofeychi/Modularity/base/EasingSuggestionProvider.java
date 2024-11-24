@@ -28,9 +28,11 @@ import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import net.kofeychi.Modularity.DataUtil.EasingSelector;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
 import java.util.concurrent.CompletableFuture;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class EasingSuggestionProvider implements SuggestionProvider<ServerCommandSource> {
     @Override
     public CompletableFuture<Suggestions> getSuggestions(CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) throws CommandSyntaxException {

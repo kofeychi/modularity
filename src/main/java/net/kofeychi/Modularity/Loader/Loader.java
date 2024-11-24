@@ -25,10 +25,12 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.kofeychi.Modularity.base.Modularity;
 import net.kofeychi.Modularity.logger.LogTypes;
 import net.kofeychi.Modularity.logger.ModularityLogger;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 @SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class Loader {
     // MODULARITY ADDON LOADER MAIN INFO
     public static String ID = "ModularityLoader";

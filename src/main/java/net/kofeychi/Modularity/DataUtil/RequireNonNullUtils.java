@@ -22,7 +22,10 @@ package net.kofeychi.Modularity.DataUtil;
  * SOFTWARE.
  */
 import net.kofeychi.Modularity.Util.Easing;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class RequireNonNullUtils {
     public static Easing RequireNonNullOrDef(Easing var, Easing def) {
         if (var == null) {

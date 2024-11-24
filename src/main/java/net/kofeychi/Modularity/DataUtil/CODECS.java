@@ -21,9 +21,12 @@ package net.kofeychi.Modularity.DataUtil;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
+
 import java.util.Arrays;
 import java.util.List;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class CODECS {
     public static class ShakeCODEC {
         public static String PackShake(int dur, float i1, float i2, float i3, String e1, String e2, int p, int mode,int ir,int ip,float pS) {

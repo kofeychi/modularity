@@ -23,7 +23,10 @@ package net.kofeychi.Modularity.base;
  */
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 @Config(name = "modularity")
 class Modularityconfig implements ConfigData {
     double ScreenshakeIntensity = 1;

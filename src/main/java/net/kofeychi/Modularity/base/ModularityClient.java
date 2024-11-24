@@ -22,7 +22,10 @@ package net.kofeychi.Modularity.base;
  * SOFTWARE.
  */
 import net.fabricmc.api.ClientModInitializer;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class ModularityClient implements ClientModInitializer {
 
 	@Override

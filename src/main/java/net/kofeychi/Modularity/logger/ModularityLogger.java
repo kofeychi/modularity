@@ -21,6 +21,7 @@ package net.kofeychi.Modularity.logger;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,7 +29,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import static net.kofeychi.Modularity.logger.ModularityLogger.Util.*;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class ModularityLogger {
     public Logger LOGGER;
 

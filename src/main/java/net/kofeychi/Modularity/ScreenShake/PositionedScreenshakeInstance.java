@@ -5,7 +5,7 @@ import net.minecraft.client.render.Camera;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import org.joml.Vector3f;
-
+@SuppressWarnings("All")
 public class PositionedScreenshakeInstance extends ScreenshakeInstance {
     public final Vec3d position;
     public float falloffDistance,BasefalloffDistance;

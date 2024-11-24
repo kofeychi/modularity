@@ -1,5 +1,7 @@
 package net.kofeychi.Modularity.Util;
 
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
+
 import java.util.HashMap;
 
 /**
@@ -21,6 +23,8 @@ import java.util.HashMap;
  * @author Robert Penner (functions)
  * @author davedes (java port)
  */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public abstract class Easing {
 
     public static final HashMap<String, Easing> EASINGS = new HashMap<>();

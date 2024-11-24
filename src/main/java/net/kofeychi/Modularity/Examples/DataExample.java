@@ -27,10 +27,12 @@ import net.kofeychi.Modularity.DataUtil.EasingSelector;
 import net.kofeychi.Modularity.Util.Easing;
 import net.kofeychi.Modularity.base.Modularity;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class DataExample {
     public static Easing SelectEasing(String val){
         return EasingSelector.EasingSelectorGet(val);

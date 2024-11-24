@@ -31,11 +31,13 @@ import net.kofeychi.Modularity.base.Modularity;
 import net.kofeychi.Modularity.logger.LogTypes;
 import net.kofeychi.Modularity.logger.ModularityLogger;
 import net.minecraft.client.render.Camera;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 
 import java.util.ArrayList;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class ScreenShakeModule implements ClientModInitializer {
     // MODULARITY ADDON LOADER MAIN INFO
     public static String ID = "ModularityScreenShake";

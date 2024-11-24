@@ -21,9 +21,21 @@ package net.kofeychi.Modularity.Util;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 import net.kofeychi.Modularity.base.Modularity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
+/**
+ * Identifier based util class
+ */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class IU {
+    /**
+     * Fast identifier creation using the Modularity modID,if you want to have it like this,copy this line or even class and change the MODID to your mod id.
+     * @param name
+     * @return Identifier
+     */
     public static Identifier of(String name){return Identifier.of(Modularity.MODID,name);}
 }

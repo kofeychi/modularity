@@ -7,6 +7,7 @@ import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
 /*
  * ModularityAPI
@@ -30,6 +31,8 @@ import net.minecraft.util.Identifier;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class Networking {
     // MODULARITY ADDON LOADER MAIN INFO
     public static String ID = "ModularityNetworking";

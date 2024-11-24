@@ -23,7 +23,10 @@ package net.kofeychi.Modularity.base;
  */
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class ModularityDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {

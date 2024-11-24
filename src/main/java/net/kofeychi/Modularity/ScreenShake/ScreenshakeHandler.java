@@ -1,13 +1,15 @@
 package net.kofeychi.Modularity.ScreenShake;
 
 import net.minecraft.client.render.Camera;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 
 import java.util.ArrayList;
 
 import static org.joml.SimplexNoise.noise;
-
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class ScreenshakeHandler {
 
     public static final ArrayList<ScreenshakeInstance> INSTANCES = new ArrayList<>();
@@ -49,6 +51,7 @@ public class ScreenshakeHandler {
     }
 
     public static void clientTick(Camera camera, Random random) {
+        // NOTE : that is fucking stupid implentation of all this so dont use it.
         /*// init
         intensity = 0;
         int ii = 0;

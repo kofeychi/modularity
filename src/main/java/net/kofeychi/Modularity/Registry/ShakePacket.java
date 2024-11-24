@@ -27,8 +27,17 @@ import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
+/**
+ * Class of registration of ScreenShake packets.
+ */
+@SuppressWarnings("All")
+@MethodsReturnNonnullByDefault
 public class ShakePacket {
+    /** Packet for normal Screenshake.
+     * @param data {@link net.kofeychi.Modularity.DataUtil.CODECS.ShakeCODEC Codec based output}
+     */
     public record ShakePayload(String data) implements CustomPayload {
         public static final CustomPayload.Id<ShakePayload> ID = new CustomPayload.Id<>(SHAKE_PACKET_ID);
         public static final PacketCodec<RegistryByteBuf, ShakePayload> CODEC = PacketCodec.tuple(
@@ -39,6 +48,9 @@ public class ShakePacket {
             return ID;
         }
     }
+    /** Packet for positional Screenshake.
+     * @param data {@link net.kofeychi.Modularity.DataUtil.CODECS.ShakeCODEC Codec based output}
+     */
     public record PosShakePayload(String data) implements CustomPayload {
         public static final CustomPayload.Id<PosShakePayload> ID = new CustomPayload.Id<>(POS_SHAKE_PACKET_ID);
         public static final PacketCodec<RegistryByteBuf, PosShakePayload> CODEC = PacketCodec.tuple(
