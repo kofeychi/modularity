@@ -28,7 +28,6 @@ import net.kofeychi.Modularity.Registry.ShakePacket;
 import net.kofeychi.Modularity.base.Modularity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Vec3d;
-import org.jetbrains.annotations.ApiStatus;
 
 import java.util.Iterator;
 import java.util.List;
@@ -40,7 +39,7 @@ public class BaseAPI{
     public static String MainMethod = "Setup";
     public static void Setup(Boolean n){}
     // MODULARITY ADDON LOADER MAIN INFO
-    public static class ScreenShakeAPI extends API{
+    public static class ScreenShakeAPI{
         private static int b2i(boolean val) {int pe=0;if (val) {pe=1;}return pe;}
         public static void SendNormalToAllPlayers(int duration,float intensity1,float intensity2,float intensity3,String easingIn,String easingOut,boolean Perlin,int mode,boolean isRot,boolean isPos,float pS){
             int pe=b2i(Perlin);

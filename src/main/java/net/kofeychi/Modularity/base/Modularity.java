@@ -135,7 +135,7 @@ public class Modularity implements ModInitializer {
 		int mode = IntegerArgumentType.getInteger(context,"mode");
 		boolean isrot = BoolArgumentType.getBool(context,"isRot");
 		boolean ispos = BoolArgumentType.getBool(context,"isPos");
-		float ps = (float) DoubleArgumentType.getDouble(context,"ps");
+		float ps = (float) DoubleArgumentType.getDouble(context,"ps")/10;
 		BaseAPI.ScreenShakeAPI.SendPosToAllPlayers(dur,pos,falloffDistance,maxDistance,e,i1,i2,i3,e1,e2,p,mode,isrot,ispos,ps);
 		return 1;
 	}
@@ -150,7 +150,7 @@ public class Modularity implements ModInitializer {
 		int mode = IntegerArgumentType.getInteger(context,"mode");
 		boolean isrot = BoolArgumentType.getBool(context,"isRot");
 		boolean ispos = BoolArgumentType.getBool(context,"isPos");
-		float ps = (float) DoubleArgumentType.getDouble(context,"ps");
+		float ps = (float) DoubleArgumentType.getDouble(context,"ps")/10;
 		BaseAPI.ScreenShakeAPI.SendNormalToAllPlayers(dur,i1,i2,i3,e1,e2,p,mode,isrot,ispos,ps);
 		return 1;
 	}
